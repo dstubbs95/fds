@@ -61,7 +61,6 @@ ylabel('Height (m)','FontSize',Title_Font_Size,'Interpreter',Font_Interpreter)
 
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Width Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Width Paper_Height]);
 print(gcf,'-dpdf',['vel_' 'L=' num2str(L,'%4.0f\n')])
@@ -79,7 +78,6 @@ ylabel('Height (m)','FontSize',Title_Font_Size,'Interpreter',Font_Interpreter)
 
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Width Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Width Paper_Height]);
 print(gcf,'-dpdf',['tmp_' 'L=' num2str(L,'%4.0f\n')])

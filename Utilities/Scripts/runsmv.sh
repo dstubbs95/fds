@@ -9,16 +9,14 @@ dummy=
 while getopts 'Ad:fl:mt' OPTION
 do
 case $OPTION in
-  A) # passthrough option
-   ;;
   d)
    dir="$OPTARG"
    ;;
-  f)
-   FED="-fed"
-   ;;
   l)
    dummy="$OPTARG"
+   ;;
+  f)
+   FED="-fed"
    ;;
   m)
    MOVIE="y"
@@ -34,14 +32,14 @@ in=$1
 in=${in%*.*}
 
 if [ "$FED" == "" ]; then
-  if [ "$MOVIE" == "" ]; then
-    RUNSCRIPT=-runscript
-    ssffile=$in.ssf
-  else
-    MOVIE=_movies
-    RUNSCRIPT="-script $in$MOVIE.ssf"
-    ssffile=$in$MOVIE.ssf
-  fi
+if [ "$MOVIE" == "" ]; then
+  RUNSCRIPT=-runscript
+  ssffile=$in.ssf
+else
+  MOVIE=_movies
+  RUNSCRIPT="-script $in$MOVIE.ssf"
+  ssffile=$in$MOVIE.ssf
+fi
 fi
 
 fulldir=$BASEDIR/$dir

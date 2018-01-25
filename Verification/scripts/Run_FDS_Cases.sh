@@ -12,31 +12,19 @@ fi
 
 QUEUE=batch
 DEBUG=
-SINGLE=
 nthreads=1
 resource_manager=
 walltime=
 RUNOPTION=
 CURDIR=`pwd`
-QFDS_COUNT=/tmp/qfds_count_`whoami`
-if [ "$BACKGROUND_PROG" == "" ]; then
-  export BACKGROUND_PROG=background
-fi
-if [ "$BACKGROUND_DELAY" == "" ]; then
-  BACKGROUND_DELAY=2
-fi
-if [ "$BACKGROUND_LOAD" == "" ]; then
-  export BACKGROUND_LOAD=75
-fi
-if [ "$JOBPREFIX" == "" ]; then
-  export JOBPREFIX=FB_
-fi
+BACKGROUND=
+BACKGROUND_DELAY=2
+BACKGROUND_LOAD=75
+JOBPREFIX=
 REGULAR=1
 BENCHMARK=1
 OOPT=
 POPT=
-INTEL=
-INTEL2=
 
 function usage {
 echo "Run_FDS_Cases.sh [ -d -h -m max_iterations -o nthreads -q queue_name "
@@ -48,10 +36,11 @@ echo "-b - run only benchmark cases"
 echo "-d - use debug version of FDS"
 echo "-h - display this message"
 echo "-j - job prefix"
-echo "-J - use Intel MPI version of FDS"
 echo "-m max_iterations - stop FDS runs after a specifed number of iterations (delayed stop)"
 echo "     example: an option of 10 would cause FDS to stop after 10 iterations"
 echo "-o nthreads - run FDS with a specified number of threads [default: $nthreads]"
+echo "-O - pass through -O option to qfds.sh"
+echo "-P - pass through -P option to qfds.sh"
 echo "-q queue_name - run cases using the queue queue_name"
 echo "     default: batch"
 echo "     other options: fire70s, vis"
@@ -72,7 +61,7 @@ cd $SVNROOT
 export SVNROOT=`pwd`
 cd $CURDIR
 
-while getopts 'bB:c:dD:hj:JL:m:o:q:r:RsS:w:' OPTION
+while getopts 'bB:c:dD:hj:L:m:o:O:P:q:r:Rsw:' OPTION
 do
 case $OPTION in
   b)
@@ -85,20 +74,33 @@ case $OPTION in
    ;;
   d)
    DEBUG=_db
-   SINGLE="1"
+   ;;
+  B)
+   BACKGROUND="$OPTARG"
+   ;;
+  D)
+   BACKGROUND_DELAY="$OPTARG"
    ;;
   h)
    usage;
    ;;
-  J)
-   INTEL=i
-   INTEL2="-I"
+  j)
+   JOBPREFIX="-j $OPTARG"
+   ;;
+  L)
+   BACKGROUND_LOAD="$OPTARG"
    ;;
   m)
    export STOPFDSMAXITER="$OPTARG"
    ;;
   o)
    nthreads="$OPTARG"
+   ;;
+  O)
+   OOPT="$OPTARG"
+   ;;
+  P)
+   POPT="$OPTARG"
    ;;
   q)
    QUEUE="$OPTARG"
@@ -131,7 +133,7 @@ if [ "$POPT" != "" ]; then
 fi
 
 export FDS=$SVNROOT/fds/Build/${OPENMP}intel_$PLATFORM$DEBUG/fds_${OPENMP}intel_$PLATFORM$DEBUG
-export FDSMPI=$SVNROOT/fds/Build/${INTEL}mpi_intel_$PLATFORM$DEBUG/fds_${INTEL}mpi_intel_$PLATFORM$DEBUG
+export FDSMPI=$SVNROOT/fds/Build/mpi_intel_$PLATFORM$DEBUG/fds_mpi_intel_$PLATFORM$DEBUG
 export QFDSSH="$SVNROOT/fds/Utilities/Scripts/qfds.sh $RUNOPTION"
 
 if [ "$resource_manager" == "SLURM" ]; then
@@ -141,22 +143,24 @@ else
 fi
 if [ "$QUEUE" != "" ]; then
    if [ "$QUEUE" == "none" ]; then
-      echo 0 > $QFDS_COUNT
+      if [ "$BACKGROUND" == "" ]; then
+         BACKGROUND=background
+      fi
+      BACKGROUND="-B $BACKGROUND"
+      export BACKGROUND_DELAY
+      export BACKGROUND_LOAD
+      JOBPREFIX=
    fi
    QUEUE="-q $QUEUE"
 fi
 
 export BASEDIR=`pwd`
 
-export QFDS="$QFDSSH $walltime -n $nthreads $INTEL2 -e $FDSMPI $QUEUE $OOPT $POPT" 
+export QFDS="$QFDSSH $BACKGROUND $walltime -n $nthreads $JOBPREFIX -e $FDSMPI $QUEUE $OOPT $POPT" 
 
 cd ..
 if [ "$BENCHMARK" == "1" ]; then
-  if [ "$SINGLE" == "" ]; then
-    ./FDS_Benchmark_Cases.sh
-  else
-    ./FDS_Benchmark_Cases_single.sh
-  fi
+  ./FDS_Benchmark_Cases.sh
   echo FDS benchmark cases submitted
 fi
 

@@ -39,9 +39,6 @@ BINDIR=
 while getopts 'bdhm:r:stxy:z:' OPTION
 do
 case $OPTION  in
-  b)
-   TIME="-time"
-   ;;
   d)
    DEBUG=_db
    ;;
@@ -53,6 +50,9 @@ case $OPTION  in
    ;;
   r)
    BINDIR="$OPTARG"
+   ;;
+  b)
+   TIME="-time"
    ;;
   s)
    NOSHOW=

@@ -1,10 +1,7 @@
 echo off
-set FDSMAJORVERSION=6
-set FDSEDITION=FDS6
-set SMVEDITION=SMV6
 
-set fdsversion=%FDSEDITION%
-set smvversion=$SMVEDITION%
+set fdsversion=%fds_edition%
+set smvversion=SMV6
 
 set SVNROOT=%svn_root%
 set fdsdir=%svn_root%\fds\Build\intel_win_%platform%
@@ -70,7 +67,7 @@ mkdir %out_uninstall%
 mkdir %out_fdshash%
 mkdir %out_smvhash%
 
-set release_version=%FDSMAJORVERSION%_win_%platform%
+set release_version=%fdssmv_major_version%_win_%platform%
 set release_version=
 
 echo.
@@ -80,7 +77,7 @@ echo.
 
 copy %in_for_bundle%\*.po                                                                        %out_bin%\.>Nul
 
-CALL :COPY  %fdsmpidir%\fds_impi_win_%platform%.exe                                              %out_bin%\fds.exe
+CALL :COPY  %fdsmpidir%\fds_mpi_win_%platform%.exe                                               %out_bin%\fds.exe
 CALL :COPY  %svn_root%\fds\Utilities\fds2ascii\intel_win_%platform%\fds2ascii_win_%platform%.exe %out_bin%\fds2ascii.exe
 CALL :COPY  %svn_root%\smv\Build\background\intel_win_64\background.exe                          %out_bin%\background.exe
 CALL :COPY  %svn_root%\fds\Utilities\test_mpi\impi_intel_win\test_mpi.exe                        %out_bin%\test_mpi.exe

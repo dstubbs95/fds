@@ -97,7 +97,6 @@ addverstr(a1,Git_Filename,'linear')
 set(a1,'FontName',Font_Name)
 set(a1,'FontSize',Label_Font_Size)
 set(f1,'Units',Paper_Units);
-set(f1,'PaperUnits',Paper_Units);
 set(f1,'PaperSize',[Paper_Width Paper_Height]);
 set(f1,'Position',[0 0 Paper_Width Paper_Height]);
 print(f1,'-dpdf',[plotdir,'hot_layer_temp_1'])
@@ -146,7 +145,6 @@ set(a2,'FontName',Font_Name)
 set(a2,'FontSize',Label_Font_Size)
 set(f2,'Visible',Figure_Visibility);
 set(f2,'Units',Paper_Units);
-set(f2,'PaperUnits',Paper_Units);
 set(f2,'PaperSize',[Paper_Width Paper_Height]);
 set(f2,'Position',[0 0 Paper_Width Paper_Height]);
 print(f2,'-dpdf',[plotdir,'hot_layer_vel_1'])
@@ -202,7 +200,6 @@ set(a3,'FontName',Font_Name)
 set(a3,'FontSize',Label_Font_Size)
 set(f3,'Visible',Figure_Visibility);
 set(f3,'Units',Paper_Units);
-set(f3,'PaperUnits',Paper_Units);
 set(f3,'PaperSize',[Paper_Width Paper_Height]);
 set(f3,'Position',[0 0 Paper_Width Paper_Height]);
 print(f3,'-dpdf',[plotdir,'hot_layer_temp_2'])
@@ -254,7 +251,6 @@ set(a4,'FontName',Font_Name)
 set(a4,'FontSize',Label_Font_Size)
 set(f4,'Visible',Figure_Visibility);
 set(f4,'Units',Paper_Units);
-set(f4,'PaperUnits',Paper_Units);
 set(f4,'PaperSize',[Paper_Width Paper_Height]);
 set(f4,'Position',[0 0 Paper_Width Paper_Height]);
 print(f4,'-dpdf',[plotdir,'hot_layer_vel_2'])

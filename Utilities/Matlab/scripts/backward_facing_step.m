@@ -91,7 +91,6 @@ set(gca,'Units',Plot_Units)
 set(gca,'Position',[Plot_X Plot_Y Plot_Width Plot_Height])
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Width Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Width Paper_Height]);
 
@@ -176,7 +175,6 @@ set(gca,'Units',Plot_Units)
 set(gca,'Position',[Plot_X,Plot_Y,Plot_Width,Plot_Height])
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Width Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Width Paper_Height]);
 
@@ -238,7 +236,6 @@ hx = figure(3);
 
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Width Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Width Paper_Height]);
 
@@ -318,7 +315,6 @@ hx = figure(4);
 
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Width Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Width Paper_Height]);
 
@@ -395,7 +391,6 @@ hx = figure(5);
 
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Width Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Width Paper_Height]);
 
@@ -474,7 +469,6 @@ hx = figure(6);
 
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Width Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Width Paper_Height]);
 
@@ -554,7 +548,6 @@ hx = figure(7);
 
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Width Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Width Paper_Height]);
 

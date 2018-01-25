@@ -142,7 +142,6 @@ ylabel(d_ax(1),'Mean diameter (\mum)','Interpreter',Font_Interpreter)
 % print to pdf
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Height Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Height Paper_Height]);
 print(gcf,'-dpdf','../../Manuals/FDS_Validation_Guide/SCRIPT_FIGURES/BRE_LEMTA_Spray/BRE_Spray_Diameter');
@@ -172,7 +171,6 @@ ylabel(w_ax(1),'Mean W-velocity (m/s)','Interpreter',Font_Interpreter)
 % print to pdf
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Paper_Height Paper_Height]);
 set(gcf,'Position',[0 0 Paper_Height Paper_Height]);
 print(gcf,'-dpdf','../../Manuals/FDS_Validation_Guide/SCRIPT_FIGURES/BRE_LEMTA_Spray/BRE_Spray_W');
@@ -250,7 +248,6 @@ set(hl(n),'FontSize',Key_Font_Size)
 % print to pdf
 set(gcf,'Visible',Figure_Visibility);
 set(gcf,'Units',Paper_Units);
-set(gcf,'PaperUnits',Paper_Units);
 set(gcf,'PaperSize',[Scat_Paper_Width Scat_Paper_Height]);
 set(gcf,'Position',[0 0 Scat_Paper_Width Scat_Paper_Height]);
 print(gcf,'-dpdf','../../Manuals/FDS_Validation_Guide/SCRIPT_FIGURES/BRE_LEMTA_Spray/BRE_LEMTA_Spray_Attenuation');

@@ -42,90 +42,6 @@ A common validation experiment for CFD codes involves flow through a channel wit
 Craig Beyler performed a large number of experiments involving a variety of fuels, fire sizes, burner diameters, and burner distances beneath a hood~\cite{Beyler:Hood}.  The hood consisted of concentric cylinders separated by an air gap.  The inner cylinder was shorter than the outer and this allowed combustion products to be removed uniformly from the hood perimeter.  The exhaust gases were then analyzed to determine species concentrations. The burner could be raised and lowered with respect to the bottom edge of the hood.  Based on the published measurement uncertainties, species errors are estimated at 6~\%.  148 tests were performed with measurements made in the exhaust duct.  The fuels in those tests were as follows: 16 acetone, 11 ethanol, 13 isopropanol, 18 methanol, 51 propane, 28 propylene, and 11 toluene. Hood equivalence ratios varied from 0.2 to 1.7.  A subset of 47 tests spanning the equivalence ratio range for each fuel was simulated for validation (5, 5, 5, 5, 15, 7, and 5 respectively for the fuels mentioned above).
 
 
-\section{Bittern Sprinkler Experiments}
-\label{bittern-experiments}
-
-In 2004, a set of 22 fire experiments was conducted at the University of Canterbury, New Zealand, by Adam Bittern~\cite{Bittern:Thesis,Wade:FT2007}. In each experiment, a single chair was burned within an enclosure with two sprinklers installed. The sprinklers were not charged with flowing water during the experiments, but pressure gauges were installed immediately upstream of each sprinkler to indicate activation. The sprinkler actuation time, chair mass loss rate, and gas temperature profile were measured. The HRR was estimated from the measured mass loss rate and heat of combustion of the fuel.
-
-The experiments incorporated four different types of sprinklers, two fire locations (the center and corner of the enclosure), and two ventilation conditions (open or closed door). The enclosure was timber-framed and lined with 10~mm thick gypsum plasterboard. The door was made of plywood and was 0.8~m wide by 2.1~high. The compartment layout, dimensions and experimental arrangement are shown in Figure~\ref{bit_plan}. The chair used as fuel for each experiment was made of flexible polyurethane foam slabs, where each slab measured approximately 0.5~m by 0.4~m by 0.1~m. The seat was ignited using a solid petroleum lighter.
-
-Table~\ref{bit_sum} reports the sprinkler actuation times of each sprinkler.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{FIGURES/Bittern_Sprinkler_Experiments/Bittern_Sketch}
-\caption[Plan view of the Bittern Sprinkler Experiments]{Plan view of the Bittern Sprinkler Experiments.}
-\label{bit_plan}
-\end{figure}
-
-
-\begin{table}[!ht]
-\centering
-\caption{Summary of results, Bittern experiments. Note that Exp.~11 has been excluded because of a failed mass loss measurement.}
-\label{bit_sum}
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-\hline
-Exp. & Spr.~1 & Time (s) & Spr.~2 & Time (s) & $T_0$ ($^\circ$C) & Door   & Fire Position \\ \hline \hline
-1    & Res A  & 210      & Res A  & 250      & 23.7              & Open   & Center        \\ \hline
-2    & Res A  & 225      & Res A  & 211      & 25.5              & Open   & Center        \\ \hline
-3    & Res B  & 192      & Res B  & 192      & 25.5              & Open   & Center        \\ \hline
-4    & SS68   & 226      & SS68   & 226      & 25.7              & Open   & Center        \\ \hline
-5    & SS68   & 266      & SS68   & 272      & 27.5              & Open   & Center        \\ \hline
-6    & SS68   & 216      & SS68   & 211      & 27.7              & Open   & Center        \\ \hline
-7    & Res A  & 182      & Res A  & 186      & 28.2              & Open   & Center        \\ \hline
-8    & Res B  & 182      & Res B  & 187      & 27.9              & Open   & Center        \\ \hline
-9    & Res B  & 233      & Res B  & 230      & 28.9              & Open   & Center        \\ \hline
-10   & Res A  & 183      & Res B  & 184      & 29.4              & Open   & Center        \\ \hline
-12   & SS68   & 246      & Res B  & 228      & 24.0              & Closed & Center        \\ \hline
-13   & SS68   & 204      & Res B  & 194      & 24.5              & Closed & Center        \\ \hline
-14   & SS68   & 203      & Res B  & 187      & 24.2              & Closed & Center        \\ \hline
-15   & SS68   & 270      & Res B  & 253      & 23.7              & Closed & Center        \\ \hline
-16   & Res B  & 178      & Res A  & 224      & 20.6              & Closed & Corner        \\ \hline
-17   & Res B  & 181      & Res A  & 228      & 23.8              & Closed & Corner        \\ \hline
-18   & SS68   & 187      & Res A  & 221      & 25.0              & Closed & Corner        \\ \hline
-19   & SS68   & 189      & Res A  & 223      & 26.4              & Closed & Corner        \\ \hline
-20   & SS68   & 205      & Res A  & DNA      & 25.3              & Closed & Corner        \\ \hline
-21   & SS93   & 216      & SS93   & 330      & 25.2              & Closed & Corner        \\ \hline
-22   & SS93   & 205      & SS93   & 263      & 25.2              & Closed & Corner        \\ \hline
-\end{tabular}
-\end{table}
-
-\subsection{Modeling Assumptions}
-
-The assumptions given in this section were used in the original analysis of the experiments~\cite{Bittern:Thesis}.
-
-\subsubsection{Material Properties}
-
-The gypsum board had a thickness of 1~cm, density of 731~kg/m\textsuperscript{3}, specific heat of 0.90~kJ/(kg$\cdot$K), conductivity of 0.17~W/(m$\cdot$K), and emissivity of 0.88. The concrete floor was assumed to have a thickness of 10~cm, density of 2300~kg/m$^3$, specific heat of 0.88~kJ/(kg$\cdot$K), conductivity of 1.2~W/(m$\cdot$K), and emissivity of 0.5.
-
-\subsubsection{Sprinkler Properties}
-
-The properties of the sprinklers are shown in Table~\ref{Bittern_Sprinklers}. These properties are based on the manufacturer's specification where available or otherwise estimated based on measured values of comparable sprinklers. For modeling purposes, the sprinkler offset, 2~cm, was selected based on an approximate 2~cm glass bulb length, and the C-factor selected was based on a sensitivity analyses undertaken in the original study.
-
-\begin{table}[!ht]
-\centering
-\caption[Properties of sprinklers used in Bittern Experiments]{Properties of sprinklers used in Bittern Experiments.}
-\label{Bittern_Sprinklers}
-\begin{tabular}{|l|l|c|c|c|}
-\hline
-\textbf{Short} & \textbf{Description}                & \textbf{RTI}        & \textbf{C-Factor} & \textbf{Act. Temp.} \\
-\textbf{Name}  &                                     & (m$\cdot$s)$^{1/2}$ & (m/s)$^{1/2}$     & $^\circ$C           \\ \hline
-Res A          & Residential, 3 mm glass bulb        & 36                  & 0.4               & 68                  \\ \hline
-Res B          & Residential, 3 mm glass bulb        & 36                  & 0.4               & 68                  \\ \hline
-SS68           & Standard Response, 5 mm glass bulb  & 95                  & 0.4               & 68                  \\ \hline
-SS93           & Standard Response, 5 mm glass bulb  & 95                  & 0.4               & 93                  \\ \hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Fire and Combustion}
-
-The average heat of combustion of the upholstery was measured in a cone calorimeter to be 21.9~MJ/kg (Exp.~1-10) and 20.4~MJ/kg (Exp.~12-22). Since the primary fuel used in the experiments was flexible polyurethane foam, the radiant loss fraction assumed in the fire model was 0.46. Other combustion parameters were as for polyurethane foam, and all parameters selected are consistent with those used in the original BRANZFIRE study~\cite{Wade:FT2007}. For the ``simple chemistry'' combustion model, inputs for stoichiometric yields have been selected from literature based on GM23 foam, with an effective molecular formula of CH$_{1.8}$O$_{0.35}$N$_{0.06}$. The soot yield was assumed to be 0.227~kg/kg. The area of the fire was taken to be 0.4~m by 0.5~m. The height of the fire was assumed to be 0.65~m above the floor.
-
-\subsubsection{Ventilation and Leakage}
-
-For experiments 11 to 22, the door to the compartment was closed. The estimated leakage area was assumed based on data for loose-fitting internal walls. An area of 0.053 m\textsuperscript{2} was evenly distributed across the door.
-
-
 \section{Bouchair Solar Chimney}
 
 To evaluate solar-induced ventilation systems in desert climates, Bouchair~\cite{Bouchair:Thesis} constructed a simple test apparatus shown in Fig.~\ref{Bouchair_Drawing}. A compartment with interior dimensions of approximately 1.6~m long, 1.8~m, and 2.0~m high had a window on one side and an air inlet slot on the other, leading into a 1.5~m wide cavity with two heating panels spanning the long dimension. The panels were heated to 10~$^\circ$C, 20~$^\circ$C, 30~$^\circ$C, or 40~$^\circ$C above ambient, drawing air through the compartment and into the thermal cavity. The mass flow rate of air through the cavity was measured. The inlet slot was either 0.1~m or 0.4~m high, and 1.4~m wide. The thermal cavity was 1.5~m wide, and the hot panels were separated by 0.1~m, 0.2~m, 0.3~m, 0.5~m, or 1.0~m. In all, there were 40 different sets of test parameters.
@@ -137,6 +53,7 @@ In addition to the results presented in this guide, simulations of this experime
 \caption[Geometry of the Bouchair Solar Chimney experiment]{Geometry of the Bouchair Solar Chimney experiment.}
 \label{Bouchair_Drawing}
 \end{figure}
+
 
 
 \section{BRE Spray Test for Radiation Attenuation}
@@ -257,7 +174,7 @@ The following information was provided by the test director, Steve Nowlen of San
 
 
 
-\begin{table}[!ht]
+\begin{table}[h!]
 \caption[Summary of FM/SNL Experiments]{Summary of FM/SNL Experiments. ACH stands for Air Changes per Hour.}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -296,7 +213,7 @@ No.     &  Type             & HRR (kW)      & Position      & Rate (ACH)        
 \label{FM_SNL_Drawing}
 \end{figure}
 
-\FloatBarrier
+\clearpage
 
 
 %\section{FPRF/HAI Corridor Test Series}
@@ -338,7 +255,7 @@ No.     &  Type             & HRR (kW)      & Position      & Rate (ACH)        
 %\end{table}
 %
 %
-%\FloatBarrier
+%\clearpage
 
 \section{FM Vertical Wall Flame Experiments}
 
@@ -450,7 +367,7 @@ In 2006, the Fire Protection Research Foundation (FPRF) undertook a research pro
 
 In 1979, at the National Bureau of Standards (now NIST), Bernard McCaffrey measured centerline temperature and velocity profiles above a porous, refractory burner. There were five distinct heat release rates, ranging from 14~kW to 57~kW. The fuel was natural gas (35 kJ/L [45 MJ/kg assuming 19 kg/kgmol as mole weight for natural gas]). The burner was square, 0.3~m on each side. The results of the experiments are reported in Reference~\cite{McCaffrey:NBSIR_79-1910}. Along the centerline of the burner, velocity and temperature were measured using bi-directional probes and thermocouples, respectively.  The centerline data collapses when scaled by the Froude number as shown in Fig.~\ref{fig:McCaffrey_Correlations}. Radiant fraction measurements for natural gas were made in \cite{McCaffrey:1981}.  For convenience, we have extracted the data from that report for the heat release rates reported in \cite{McCaffrey:NBSIR_79-1910}.  See Table \ref{tab:McCaffrey_Plume_Exp}.  The burner surface temperatures are extrapolated to the surface location from a least squares fit of of the temperature data below $z/Q^{2/5} = 0.05$ \si{m.kW^{-2/5}}.  The extrapolations for each power are shown in Fig.~\ref{fig:McCaffrey_Surf_Temp}.
 
-\begin{figure}[!ht]
+\begin{figure}[p]
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 \includegraphics[height=2.2in]{SCRIPT_FIGURES/McCaffrey_Plume/McCaffrey_Temperature_Correlation} &
 \includegraphics[height=2.2in]{SCRIPT_FIGURES/McCaffrey_Plume/McCaffrey_Velocity_Correlation} \\
@@ -460,7 +377,7 @@ In 1979, at the National Bureau of Standards (now NIST), Bernard McCaffrey measu
 \label{fig:McCaffrey_Correlations}
 \end{figure}
 
-\begin{table}[!ht]
+\begin{table}[p]
 \caption{Summary of McCaffrey Plume Experiments, 1979.}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -476,7 +393,7 @@ $Q$ (kW) & $Q^*$    & $D^*$ (m)   & HRRPUA (kW/m$^2$)  & $\chi_r$ & $T_{\rm surf
 \label{tab:McCaffrey_Plume_Exp}
 \end{table}
 
-\begin{figure}[!ht]
+\begin{figure}[p]
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 \includegraphics[height=2.2in]{SCRIPT_FIGURES/McCaffrey_Plume/McCaffrey_14kW_Surface_Temp} &
 \includegraphics[height=2.2in]{SCRIPT_FIGURES/McCaffrey_Plume/McCaffrey_22kW_Surface_Temp} \\
@@ -490,7 +407,7 @@ $Q$ (kW) & $Q^*$    & $D^*$ (m)   & HRRPUA (kW/m$^2$)  & $\chi_r$ & $T_{\rm surf
 \end{figure}
 
 
-\FloatBarrier
+\clearpage
 
 \section{NBS Multi-Room Experiments}
 
@@ -573,13 +490,13 @@ Number &  Type         &  HRR (kW)    &  Size (m$^2$) &  Opening (cm)     \\ \hl
 
 The NIST FSE (2008) Experiments were conducted in an ISO~9705 compartment~\cite{Lock:1}. The compartment was 2.4~m wide by 3.6~m long by 2.4~m high with a 2~m high door at one end (Fig.~\ref{NIST_FSE_2008_Drawing}). The door width varied between 0.1~m and 0.8~m. The experiments were designed to study the effects of fuel type, fuel distribution, and vent size on under-ventilated compartment fires. Thirty experiments were conducted, which included 7 different fuels, 3 fuel sources, and 4 ventilation openings. Table~\ref{tab:NIST_FSE_Exp} provides a summary of the experiments. Species concentrations and temperature measurements were made at the front and rear of the compartment.
 
-\begin{figure}[!ht]
+\begin{figure}[p]
 \includegraphics[width=\textwidth]{FIGURES/NIST_FSE_2008/NIST_FSE_2008_Drawing}
 \caption[Geometry of the compartment used in the NIST Full-Scale Enclosure experiments]{Geometry of the compartment used in the NIST Full-Scale Enclosure (FSE) experiments.}
 \label{NIST_FSE_2008_Drawing}
 \end{figure}
 
-\begin{table}[!ht]
+\begin{table}[p]
 \caption{Summary of NIST FSE Experiments selected for model validation.}
 \begin{center}
 \begin{tabular}{|l|l|c|c|c|c|}
@@ -619,7 +536,7 @@ ISONG32       &  Natural Gas  &            &  1        &  0.28         &  20    
 \end{table}
 
 
-\FloatBarrier
+
 
 
 \section{NIST Helium Experiments}
@@ -676,13 +593,11 @@ and \SI{0.195 \pm 0.052}{kg/kg} for heptane and toluene, respectively.
 \end{description}
 
 
-\FloatBarrier
+\clearpage
 
-\section{NIST/NRC Corner, Wall, and Cabinet Experiments}
+\section{NIST/NRC Corner and Wall Effects Experiments}
 
-In the summer of 2017, experiments were conducted in a large compartment in the NIST large fire laboratory on behalf of the U.S. Nuclear Regulatory Commission. There were two sets of experiments. In the first set, conducted in July, 2017, a natural gas burner was positioned either in a corner or against a wall, and gradually moved outward. In the second set of experiments, conducted in September, 2017, a natural gas burner was placed inside one of two steel cabinets meant to represent typical industrial-scale electrical enclosures.
-
-The compartment for all experiments was 11~m long, 7~m wide, and 3.8~m high. The long dimension of the compartment ran east-west. A 1.8~m wide, 2.4~m high door was centered on the east (short) wall.
+In the summer of 2017, large compartment experiments were conducted at NIST on behalf of the U.S. Nuclear Regulatory Commission in which a natural gas burner was positioned in a corner, against a wall, or inside steel cabinets of various geometries. The compartment was 11~m long, 7~m wide, and 3.8~m high. The long dimension of the compartment ran east-west. A 1.8~m wide, 2.4~m high door was centered on the east (short) wall.
 
 All of the fires were fueled by one or more 30.5~cm (1~ft) square natural gas burners. Each burner was essentially a steel box, 30.5~cm square in plan and 15~cm deep, fueled from below. The lip of the burner was 2.5~cm (1~in) wide. A 2.5~cm thick piece of Kaowool insulation was placed under a steel mesh to form the surface of the burner.
 
@@ -781,11 +696,11 @@ In this second series of experiments, conducted in September, 2017, two differen
 \end{figure}
 
 
-For the first set of experiments (1-6), the large cabinet was positioned with its front opening facing eastward towards the opening of the test compartment. Its left side was 1.8~m from the south wall and its front side was 5.8~m from the east wall. Two 0.3~m by 0.3~m natural gas burners were placed side by side in the cabinet from the perspective of the cabinet front opening. The top of the burner was 50~cm above the floor of the cabinet. For Tests~1-4, the front door of the cabinet was closed, and the heat release rate was initially set to 50~kW for 30~min, then it was increased to 100~kW for 15~min, 200~kW for 15~min, and 400~kW for 15~min. For Tests~5-6, the front door was opened, and the heat release rate was set to 200~kW, 400~kW, and 700~kW for 15~min each, and then 1000~kW for 5~min, a total of 50~min.
+For the first set of experiments (1-6), the large cabinet was positioned with its front opening facing eastward towards the opening of the test compartment. Its left side was 1.8~m from the south wall and its front side was 5.8~m from the east wall. Two 0.3~m by 0.3~m natural gas burners were placed side by side in the cabinet from the perspective of the cabinet front opening. For Tests~1-4, its front door closed, and the heat release rate was initially 50~kW for 30~min, then it was increased to 100~kW for 15~min, 200~kW for 15~min, and 400~kW for 15~min. For Tests~5-6, the front door was opened, and the heat release rate was set to 200~kW, 400~kW, and 700~kW for 15~min each, and then 1000~kW for 5~min, a total of 50~min.
 
 In the second set of experiments (7-10), the medium-sized cabinet was positioned so that its front was the same distance from the east wall as the large cabinet, and its left side was 2.0 m (6.5 ft) from the south wall. A single 30~cm by 30~cm gas burner was centered within. For the closed door tests, the heat release rate was 25~kW, 50~kW, 100~kW, and 200~kW, each for 15~min. For the open door tests, the heat release rate was 40~kW, 80~kW, 200~kW, and 325~kW, each for 15~min.
 
-In the third set of experiments (11-12), the cabinet was removed, and two 30~cm by 30~cm burners were spaced 0.9~m (3~ft) apart, side to side. One of the burners was centered under the array of thermocouples. Both burners were 2.0~m from the south wall. These experiments used the same heat release rate sequence as the open and closed door large cabinet experiments.
+In the third set of experiments (11-12), the cabinet was removed, and two 30~cm by 30~cm burners were spaced 0.9~m (3~ft) apart. One of the burners was centered under the array of thermocouples. Both burners were 2.0~m from the south wall. These experiments used the same heat release rate sequence as the open and closed door large cabinet experiments.
 
 The data files for these experiments are labelled, {\ct NIST\_NRC\_Cabinet\_Test\_n.csv}. These files contain the same measurement positions as the corner and wall experiments, with the following additional measurements:
 \begin{itemize}
@@ -823,7 +738,7 @@ Test   & Cabinet    & Front Door & Top Vents        & Upper Side Vents          
 
 
 
-\FloatBarrier
+\clearpage
 
 \section{NIST Smoke Alarm Experiments}
 
@@ -863,7 +778,7 @@ SDC39     &  Mattress     &  Bedroom        &  200              &  180         &
 \label{NIST_Smoke_Alarms_Drawing}
 \end{figure}
 
-\FloatBarrier
+\clearpage
 
 
 \section{NIST Vent Study}
@@ -950,7 +865,7 @@ No.  & Window   & Window  & Window    & Vent     & Vent    & Vent Area    & Vent
 \end{table}
 
 
-\FloatBarrier
+\clearpage
 
 \section{NRCC Facade Heat Flux Measurements}
 
@@ -1016,7 +931,7 @@ Thermocouples and gas analyzers were placed at various locations to measure temp
 %and velocity probes in a small number of doors, vents, and HVAC ducts.  Test variables included the number of opened doors and hatches, the number of vent openings to the ambient,
 %the fire location, the fire size, and the operation of the HVAC systems.  All the fires were marine diesel pool fires.
 %
-%\FloatBarrier
+%\clearpage
 
 
 \section{NRL/HAI Wall Heat Flux Measurements}
@@ -1068,7 +983,7 @@ In 2008, three compartment experiments were performed at SP Technical Research I
 
 The experiments were performed inside a standard compartment designed for corner fire testing (ISO 9705). The compartment is 3.6~m deep, 2.4~m wide and 2.4~m high and includes a door opening 0.8~m by 2.0~m (Fig.~\ref{Room_Drawing}). The room was constructed of 20~cm thick light weight concrete blocks with a density of 600~kg/m$^3$~$\pm$~100~kg/m$^3$. The heat source was a gas burner run at a constant power of 450~kW. The top of the burner, with a square opening 30~cm by 30~cm, was placed 65~cm above the floor, 2.5~cm from the walls. A single steel beam was suspended 20~cm below the ceiling along the centerline of the compartment. There were three measurement stations along the beam at lengths of 0.9~m (Position A), 1.8~m (Position B), and 2.7~m (Position C) from the far wall where the fire was either positioned in the corner (Tests 1 and 2), or the center (Test 3). The beam in Test 1 was a rectangular steel tube filled with an insulation material. The beam in Tests 2 and 3 was an I-beam. A diagram of the room used in Test~2 is displayed in Figure~\ref{Room_Drawing}.
 
-\begin{figure}[!ht]
+\begin{figure}[ht]
 \includegraphics[width=\textwidth]{FIGURES/SP_AST/SP_AST_Compartment_Drawing}
 \caption{Geometry of the  SP/AST compartment for Test 2.}
 \label{Room_Drawing}
@@ -1077,8 +992,6 @@ The experiments were performed inside a standard compartment designed for corner
 A second series of experiments involving plate thermometers was carried out in 2011~\cite{Sjostrom:AST}. A 6~m long, 20~cm diameter vertical steel column was positioned in the center of 1.1~m and 1.9~m diesel fuel and 1.1~m heptane pool fires. Gas, plate thermometer, and surface temperatures were measured at heights of 1~m, 2~m, 3~m, 4~m, and 5~m above the pool surface. These experiments are notable because the column is partially engulfed in flames.
 
 A third series of experiments involving plate thermometers was conducted in 2015~\cite{Sjostrom:SP2016}. A simple compartment with a single door was constructed and instrumented primarily with plate thermometers. The compartment was 2.7~m long, 1.8~m wide, and 1.8~m tall, with a 0.6~m by 1.5~m door centered on one of the short walls. The PTs were affixed to the walls. The 12 experiments were conducted with four different wall linings. In Series~A, the compartment was lined with a 10~cm thick light concrete block. In Series~B, the compartment was lined with a 5~cm thick layer of insulation backed by a 3~mm thick plate of steel. In Series~C, the compartment was lined with an uninsulated 3~mm thick steel plate. In Series~D, the compartment was lined with a 3~mm thick steel plate backed by a 5~cm thick layer of insulation (the opposite of Series~B). The fires were fueled by a 0.3~m by 0.3~m propane burner located in the center of the room except for Test~A3, where it was centered on the back wall. For most of the experiments, the heat release rate was 1000~kW, except for A2 and C1, which were 500~kW, and A4 and C3, which employed linear ramp-ups to 1250~kW.
-
-\FloatBarrier
 
 
 \section{Steckler Compartment Experiments}
@@ -1127,14 +1040,13 @@ Test    & Width     & Height        & $\dot{Q}$  & Location     & Test  & Width 
 \end{table}
 
 
-\begin{figure}[!ht]
+\begin{figure}[p]
 \includegraphics[width=\textwidth]{FIGURES/Steckler_Compartment/Steckler_Room_Drawing}
 \caption{Geometry of the Steckler Compartment Experiments.}
 \label{Steckler_ Drawing}
 \end{figure}
 
 
-\FloatBarrier
 
 
 \section{UL/NIST Vent Experiments}
@@ -1182,7 +1094,7 @@ No.     & (s)       & (kW)          & Vents     & No.     & (s)       & (kW)    
 \end{table}
 
 
-\FloatBarrier
+
 
 \section{UL/NFPRF Sprinkler, Vent, and Draft Curtain Study}
 \label{UL_NFPRF_Description}
@@ -1460,9 +1372,6 @@ II-12 & C  & All Open at Start       & 23 & 0:58 & 4:55 & 119.0 &246.2 \\ \hline
 \end{description}
 
 
-\FloatBarrier
-
-
 \section{UL/NIJ Houses}
 
 The Firefighter Safety Research Institute (FSRI) of Underwriters Laboratory (UL), with support from the National Institute of Justice (NIJ), conducted fire experiments in a one-story ranch-style house and a two-story colonial-style house in the large fire facility at Northbrook, Illinois, in 2016 and 2017. The goal of the experiments was to determine the effect of ventilation on fire patterns in fully-furnished homes. As part of the project, a natural gas burner was positioned within the unfurnished structures to evaluate changes in flow patterns as various doors and windows were opened and closed. The analysis of this data is still underway, but some results for the one-story house are included.
@@ -1627,31 +1536,6 @@ A diagram of the test structure is displayed in Figure~\ref{VTT_Drawing}.
 The spray from a single water mist nozzle was measured at Tampere University of Technology using a direct imaging technique~\cite{Vaari:2012}. The model number of the nozzle is LN-2, manufactured by the Spraying Systems Company. It is a fine spray hydraulic atomizing nozzle of the standard spray, small capacity type. Measurements were made 40~cm and 62~cm below the nozzle. Measured quantities include the average droplet velocity, droplet flux, and median diameter.
 
 
-\section{Waterloo Methanol Pool Fire Experiment}
-
-Beth Weckman measured near-field temperatures and velocities of a 30.5~cm diameter methanol pool fire at the University of Waterloo, Ontario, Canada~\cite{Weckman:CF1996}. The methanol fuel flow rate was maintained at 1.35~cm$^3$/s to maintain a burner rim height of 1~cm. Assuming complete combustion, the heat release rate was approximately 24.6~kW.
-
-The burner was mounted on a traversing stand that allowed for radial and axial traverses of the fire flow field. The vapor core, continuous flame zone and fluctuating regions of the fire plume were characterized via profiles of axial and radial velocity and temperature taken at 2~cm intervals from the pool centerline to 16~cm from the centerline in the radial direction, and at heights from 2~cm to 20~cm above the fuel surface. A final radial profile was taken at a height of 30~cm. Measurements were made by moving the burner while the velocity and temperature transducers were held at a fixed point. To shield the fire from drafts, the entire system was enclosed by panels of wire mesh that was covered with an aluminum window screen.
-
-Time resolved velocity measurements were performed using a two component laser doppler anemometer. Time resolved temperature data was measured using 50~$\mu$m diameter, bare-wire thermocouples (Pt~vs~Pt-10\%~Rh) with known bead diameters in the range of 75~$\mu$m to 100~$\mu$m.
-
-Additional measurements of a 30.5~cm diameter methanol pool fire were made by Hamins et~al., including the heat flux to the pool surface~\cite{Hamins:CST1994}, centerline profiles of temperature and species concentrations~\cite{Hamins:TN1928}, and an additional radial profile of temperature 60~cm above the pool surface~\cite{Hamins:TN1928}.
-
-\subsubsection{Modeling Notes}
-
-The methanol pool fire is modeled at three different grid resolutions---2~cm, 1~cm, and 0.5~cm. Two sets of simulations are performed, one in which the mass loss rate of fuel is specified, and one in which it is predicted. The gas phase measurements are compared with the simulations for which the burning rate is specified.
-
-Because measurements of CO were made within the flame envelop, a two-step reaction mechanism is implemented. In the first reaction, fuel is converted to CO and H$_2$O, and in the second reaction, CO is converted to CO$_2$. Both reactions employ fast kinetics.
-
-Physical properties of methanol are taken from a data sheet published by the Methanol Institute~\cite{Methanol}: boiling temperature, 64.6~$^\circ$C, heat of vaporization at 64.6~$^\circ$C, 1098.3~kJ/kg, thermal conductivity, 0.2~W/(m$\cdot$K), specific heat at 25~$^\circ$C, 2.53~kJ/(kg$\cdot$K), density at 20~$^\circ$C, 792~kg/m$^3$. The heat of combustion is given as 19.9~kJ/g, but this value is not input directly, but rather calculated based on the heats of formation of the reactants and products of combustion.
-
-The radiative fraction is specified to be 16~\% (Table A.39, {\em SFPE~Handbook}~\cite{SFPE}). The path length used by RadCal to compute the table of effective radiative absorption coefficients for the gas mixture is set to 10~cm. Normally, its value is a function of grid size, but has been fixed so as not to influence the grid convergence study. The absorption coefficient of the liquid methanol is given as 52~m$^{-1}$, based on the discussion found in Appendix~L of the FDS Technical Reference Guide~\cite{FDS_Tech_Guide}, ``Absorption Coefficients of Liquid Fuels.''
-
-The modeled thermocouple has a bead diameter of 100~$\mu$m to match the experiments.
-
-For the simulations where the burning rate is not specified, a one-step, first-order reaction converting liquid methanol to fuel vapor was used. The boiling temperature of the liquid was specified as the temperature at which the reaction rate is at its peak, 64.5~$^\circ$C. This approach is different than the liquid fuel burning model in FDS. It is more like that used for non-charring polymers.
-
-
 \section{WTC Spray Burner Experiments}
 
 As part of its investigation of the World Trade Center disaster, the Building and Fire Research Laboratory at NIST conducted several series of fire experiments to both gain insight into the observed fire behavior and also to validate FDS for use in reconstructing the fires. The first series of experiments involved a relatively simple compartment with a liquid spray burner and various structural elements with varying amounts of sprayed fire-resistive materials (SFRM). A diagram of the compartment is shown in Fig.~\ref{WTC_Drawing}. A complete description of the experiments can be found in the NIST WTC report NCSTAR~1-5B~\cite{NIST_NCSTAR_1-5B}. The overall enclosure was rectangular, as were the vents and most of the obstructions. The compartment walls and ceiling were made of 2.54~cm thick marinite. The manufacturer provided the thermal properties of the material used in the calculation. The density was 737~kg/m$^3$, conductivity 0.12~W/m/K. The specific heat ranged from 1.17~kJ/kg/K at 93~$^\circ$C to 1.42~kJ/kg/K at 425~$^\circ$C. This value was assumed for higher temperatures. The steel used to construct the column and truss flanges was 0.64~cm thick.  The density of the steel was assumed to be 7,860~kg/m$^3$; its specific heat 0.45~kJ/kg/K.
@@ -1666,7 +1550,7 @@ Two fuels were used in the tests. The properties of the fuels were obtained from
 \label{WTC_Drawing}
 \end{figure}
 
-\FloatBarrier
+\clearpage
 
 
 
@@ -1694,27 +1578,22 @@ Table~\ref{Test_Parameters} presents a summary of all the experiments described 
 \item[Relative Distance from the Fire, $r_{\rm rad}/D$,] indicates whether a ``target'' is near or far from the fire.
 \end{description}
 
+
 \newpage
 
-\begin{landscape}
-\begin{longtable}{|l|c|c|c|c|c|c|c|c|c|c|}
-\caption{Summary of important experimental parameters.}  \label{Test_Parameters} \\
+%\thispagestyle{empty}
+\begin{sidewaystable}[!t]
+\caption{Summary of important experimental parameters. }
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
                     & $\dot{Q}$     & $D$           & $H$   &                   &                     &               &             &             &                       &                       \\
-\rb{Test Series}    & (kW)          & (m)           & (m)   & \rb{$\dot{Q}^*$}  & \rb{$L_{\rm f}/H$}  & \rb{$\phi$}   & \rb{$W/H$}  & \rb{$L/H$}  & \rb{$r_{\rm cj}/H$}   & \rb{$r_{\rm rad}/D$}  \\
-\hline \hline
-\endfirsthead
-\caption[]{Summary of important experimental parameters (continued).} \\
-\hline
-                    & $\dot{Q}$     & $D$           & $H$   &                   &                     &               &             &             &                       &                       \\
-\rb{Test Series}    & (kW)          & (m)           & (m)   & \rb{$\dot{Q}^*$}  & \rb{$L_{\rm f}/H$}  & \rb{$\phi$}   & \rb{$W/H$}  & \rb{$L/H$}  & \rb{$r_{\rm cj}/H$}   & \rb{$r_{\rm rad}/D$}  \\
-\hline \hline
-\endhead
+\rb{Test Series}    & (kW)          & (m)           & (m)   & \rb{$\dot{Q}^*$}  & \rb{$L_{\rm f}/H$}  & \rb{$\phi$}   & \rb{$W/H$}  & \rb{$L/H$}  & \rb{$r_{\rm cj}/H$}   & \rb{$r_{\rm rad}/D$}  \\ \hline \hline
 Arup Tunnel         & 5344          & 1.6           & 7     & 1.5               & 0.8                 & 0.0           & 1.1         & 43          & 0.0 -- 1.1            & N/A                   \\ \hline
 ATF Corridors       & 50 -- 500     & 0.5           & 2.4   & 0.3 -- 3.3        & 0.3 -- 0.9          & 0.0 -- 0.1    & 0.8         & 7.1         & 0.8 -- 6.0            & N/A                   \\ \hline
 Beyler Hood         & 8 -- 30       & 0.2           & 0.5   & 0.5 -- 1.1        & 0.7 -- 1.3          & 0.2 -- 1.7    & 2.0         & 2.0         & N/A                   & N/A                   \\ \hline
 Bryant Doorway      & 34 -- 511     & 0.3           & 2.4   & 0.5 -- 6.9        & 0.2 -- 1.0          & 0.0 -- 0.2    & 1.0         & 2.1         & 0.6 -- 0.8            & N/A                   \\ \hline
-DelCo Trainers      & 440 -- 1190   & 0.7 -- 1.2    & 2.4   & 0.7 -- 1.0        & 0.8 -- 1.1          & 0.1 -- 0.3    & 1.5         & 2.5         & 0.4 -- 3.8            & N/A                   \\ \hline
+Cup Burner          & 0.3           & 0.028         & Open  & 2.1               & Open                & Varying       & Open        & Open        & Open                  & N/A                   \\ \hline
 FAA Cargo           & 5             & 0.1           & 1.4   & 1.4               & 0.2                 & 0.2           & 2.3         & 4.8         & 0.1 -- 4.8            & N/A                   \\ \hline
 Fleury Heat Flux    & 100 -- 300    & 0.3 -- 0.6    & Open  & 0.3 -- 5.5        & Open                & Open          & Open        & Open        & Open                  & 1.7 -- 3.3            \\ \hline
 FM Panels           & 30 -- 100     & 0.5           & Open  & 0.2 -- 0.5        & Open                & Open          & Open        & Open        & Open                  & 0                     \\ \hline
@@ -1727,11 +1606,8 @@ McCaffrey Plume     & 14 -- 57      & 0.3           & Open  & 0.2 -- 0.8        
 NBS Multi-Room      & 110           & 0.3           & 2.4   & 1.5               & 0.5                 & 0.0           & 1.0         & 5.1         & N/A                   & N/A                   \\ \hline
 NIST FSE            & 100 -- 2500   & 0.6 -- 1.1    & 2.4   & 0.5 -- 1.8        & 0.4 -- 1.7          & 0.2 -- 5.9    & 1.0         & 1.5         & 0.4 -- 0.8            & N/A                   \\ \hline
 NIST/NRC            & 350 -- 2200   & 1.0           & 3.8   & 0.3 -- 2.0        & 0.3 -- 1.0          & 0.0 -- 0.3    & 1.9         & 5.7         & 0.3 -- 2.1            & 2.0 -- 4.0            \\ \hline
-NIST/NRC Cabinet    & 200 -- 400    & 0.3 -- 0.5    & 2.1   & 0.3 -- 3.7        & 0.2 -- 0.9          & 1.3 -- 12     & 0.3         & 0.4         & N/A                   & 1.2 -- 2.0            \\ \hline
-NIST/NRC Corner     & 200 -- 400    & 0.7           & 3.8   & 0.4 -- 0.9        & 0.3 -- 0.5          & <0.1          & 1.8         & 2.9         & 0.5 -- 2.3            & N/A                   \\ \hline
 NIST RSE            & 50 -- 600     & 0.15          & 1.0   & 5.2 -- 63         & 0.9 -- 2.8          & 0.1 -- 1.1    & 1.0         & 1.5         & N/A                   & N/A                   \\ \hline
 NIST Smoke Alarms   & 100 -- 350    & 1.0           & 2.4   & 0.2 -- 0.3        & 0.2 -- 0.5          & N/A           & 1.7         & 8.3         & 1.3 -- 8.3            & N/A                   \\ \hline
-NIST Vent Study     & 2.5           & 0.1           & 0.6   & 0.7               & 0.4                 & 0.05          & 2.0         & 2.0         & 1.0                   & N/A                   \\ \hline
 NRCC Facade         & 5000 -- 10300 & 4.3           & 2.8   & 0.1 -- 0.2        & 0.9 -- 1.7          & 0.6 -- 1.2    & 1.6         & 2.2         & N/A                   & 0                     \\ \hline
 NRCC Smoke Tower    & 3000          & 2.2           & 3.4   & 0.4               & 1.0                 & 0.7           & 0.1         & 0.2         & 1.2                   & N/A                   \\ \hline
 NRL/HAI             & 50 -- 520     & 0.3 -- 0.7    & Open  & 1.1 -- 1.2        & Open                & Open          & Open        & Open        & N/A                   & 0                     \\ \hline
@@ -1743,17 +1619,36 @@ UL/NFPRF            & 4400 -- 10000 & 1.0           & 7.6   & 4.0 -- 9.1        
 UL/NIST Vents       & 500 -- 2000   & 0.9           & 2.4   & 0.7 -- 2.6        & 0.8 -- 1.6          & 0.2 -- 0.6    & 1.8         & 2.5         & 1.0 -- 2.3            & N/A                   \\ \hline
 Ulster SBI          & 30 -- 60      & 0.2           & Open  & 1.5 -- 3.0        & Open                & Open          & Open        & Open        & N/A                   & 0                     \\ \hline
 USCG/HAI            & 250 -- 1000   & 0.3           & 3.0   & 6.0 -- 24         & 0.6 -- 1.1          & 0.3 -- 1.0    & 1.7         & 2.3         & N/A                   & N/A                   \\ \hline
+
+\end{tabular}
+\end{center}
+\label{Test_Parameters}
+\end{sidewaystable}
+
+
+\newpage
+
+%\thispagestyle{empty}
+\begin{sidewaystable}[!t]
+\caption{Summary of important experimental parameters (continued). }
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+                    & $\dot{Q}$     & $D$           & $H$   &                   &                     &               &             &             &                       &                       \\
+\rb{Test Series}    & (kW)          & (m)           & (m)   & \rb{$\dot{Q}^*$}  & \rb{$L_{\rm f}/H$}  & \rb{$\phi$}   & \rb{$W/H$}  & \rb{$L/H$}  & \rb{$r_{\rm cj}/H$}   & \rb{$r_{\rm rad}/D$}  \\ \hline \hline
 USN Hawaii          & 100 -- 7700   & 0.3 -- 2.5    & 15    & 0.7 -- 1.3        & 0.1 -- 0.4          & Open          & 4.9         & 6.5         & 0 -- 1.2              & N/A                   \\ \hline
 USN Iceland         & 100 -- 15700  & 0.3 -- 3.4    & 22    & 0.7 -- 1.3        & 0.0 -- 0.3          & Open          & 2.1         & 3.4         & 0 -- 1.0              & N/A                   \\ \hline
 Vettori Flat        & 1055          & 0.7           & 2.6   & 2.5               & 1.1                 & 0.3           & 2.1         & 3.5         & 0.8 -- 2.9            & N/A                   \\ \hline
 Vettori Sloped      & 1055          & 0.7           & 2.5   & 2.5               & 1.2                 & 0.3           & 2.2         & 2.9         & N/A                   & N/A                   \\ \hline
 VTT Large Hall      & 1860 -- 3640  & 1.4 -- 1.8    & 19    & 0.7               & 0.2                 & 0             & 1.0         & 1.4         & 0 -- 0.6              & N/A                   \\ \hline
-WTC                 & 1970 -- 3240  & 1.6           & 3.8   & 0.6 -- 0.9        & 0.8 -- 1.1          & 0.3 -- 0.5    & 0.9         & 1.8         & 0.0 -- 0.8            & 0.3 -- 1.3            \\ \hline
-\end{longtable}
-\end{landscape}
+WTC                 & 1970 -- 3240  & 1.6           & 3.8   & 0.6 -- 0.9        & 0.8 -- 1.1          & 0.3 -- 0.5    & 0.9         & 1.8         & 0.0 -- 0.8            & 0.3 -- 1.3              \\ \hline
+\end{tabular}
+\end{center}
+\label{Test_Parameters2}
+\end{sidewaystable}
 
 
-\FloatBarrier
+\clearpage
 
 Table~\ref{Numerical_Parameters} lists a few important parameters related to the numerical resolution of the calculation.
 \begin{description}
@@ -1777,7 +1672,7 @@ Arup Tunnel         & 1.8           & 9             & 3.8           \\ \hline
 ATF Corridors       & 0.3 -- 0.7    & 3 -- 7        & 3.4 -- 8.5    \\ \hline
 Beyler Hood         & 0.1 -- 0.2    & 5 -- 8        & 2.1 -- 3.5    \\ \hline
 Bryant Doorway      & 0.2 -- 0.7    & 5 -- 14       & 3.4 -- 9.9    \\ \hline
-DelCo Trainers      & 0.7 -- 1.0    & 6.9 -- 10     & 2.3 -- 3.5    \\ \hline
+Cup Burner          & 0.04          & 36            & Open          \\ \hline
 FAA Cargo           & 0.1           & 5.6           & 12            \\ \hline
 Fleury Heat Flux    & 0.4 -- 0.6    & 8 -- 12       & Open          \\ \hline
 FM Panels           & 0.2 -- 0.4    & 12 -- 19      & Open          \\ \hline
@@ -1790,11 +1685,8 @@ McCaffrey Plume     & 0.2 -- 0.3    & 5 -- 20       & Open          \\ \hline
 NBS Multi-Room      & 0.4           & 4             & 6.2           \\ \hline
 NIST FSE            & 0.4 -- 1.4    & 3.8 -- 14     & 1.7 -- 6.3    \\ \hline
 NIST/NRC            & 0.6 -- 1.3    & 5 -- 11       & 3.1 -- 6.5    \\ \hline
-NIST/NRC Cabinets   & 0.2 -- 0.7    & 2.2 -- 6.7    & 3.1 -- 9.5    \\ \hline
-NIST/NRC Corner     & 0.5 -- 0.7    & 5.1 -- 6.7    & 5.7 -- 7.5    \\ \hline
 NIST RSE            & 0.3 -- 0.8    & 12 -- 32      & 1.3 -- 3.5    \\ \hline
 NIST Smoke Alarms   & 0.4 -- 0.6    & 3.8 -- 6.3    & 3.8 -- 6.3    \\ \hline
-NIST Vent Study     & 0.1           & 3.5           & 6.8           \\ \hline
 NRCC Facade         & 1.8 -- 2.4    & 18 -- 24      & 1.2 -- 1.5    \\ \hline
 NRCC Smoke Tower    & 1.5           & 15            & 18.6          \\ \hline
 NRL/HAI             & 0.3 -- 0.7    & 9 -- 10       & Open          \\ \hline

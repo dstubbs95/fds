@@ -35,7 +35,6 @@ flame_height
 NIST_RSE
 sippola_aerosol_deposition
 layer_height
-NIST_NRC_Corner_Effects
 combine_csiro
 fm_datacenter_scatter
 LNG_Dispersion
@@ -90,6 +89,7 @@ pressure_coefficient
 VTT_Sprays
 fm_datacenter_veltest
 umd_line_burner_3
+% waterloo_methanol
 mccaffrey_plume
 
 display('validation scripts completed successfully!')
